@@ -63,7 +63,7 @@ func RunBenchMark(wg *sync.WaitGroup, endpoint string, iterations int, outputFil
 	log.Infof("Running benchmark with %d iterations", iterations)
 	for i := 0; i < iterations; i++ {
 		log.Infof("Burst %d", i)
-		command := `curl -X GET -H "x-api-key: <API_KEY>" -H "Content-Type: application/json" ` + endpoint
+		command := `curl -X GET -H "Content-Type: application/json" ` + endpoint
 		startTime := time.Now()
 		log.Infof("Sending request at %s", startTime)
 		RunCommandAndLog(exec.Command("sh", "-c", command))
